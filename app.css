@@ -179,11 +179,11 @@ header {
 }
 .main-textbox {
   width: 55%;
-  /* border: 2px solid red; */
+
   position: absolute;
   top: 50%;
   left: 0%;
-  transform: translate(10%, -50%);
+
   text-transform: uppercase;
   text-align: center;
   line-height: 1.5;
@@ -220,4 +220,18 @@ header {
   transform: scale(1.2) scaleY(1.01);
   /* opacity: 0.8; */
   transition: all 0.5s;
+}
+
+.footer {
+  width: 45%;
+  position: absolute;
+  top: 93%;
+  left: 0%;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+  color: #333;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  z-index: 20;
 }
