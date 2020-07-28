@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fabricate Fashion</title>
+    <link rel="stylesheet" href="app.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="#">Fabricate Fashion </a>
+        </div>
+        <div class="menu">
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Men</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Women</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Kids</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">New Arrivals</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="main">
+      <div class="main-clipped">
+        <div class="main-textbox">
+          <h1 class="main-heading">Fabricate Fashion</h1>
+          <h2 class="sub-heading">Get the best fashion clothes here!</h2>
+          <a href="#" class="cta-btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script>
+      const mainNav = document.querySelector(".main-nav");
+      const image = document.querySelector(".main");
+      const menu = document.querySelector(".menu");
+
+      menu.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+      });
+      function toggle() {
+        if (image.classList.contains("img-style")) {
+          image.classList.remove("img-style");
+        } else {
+          image.classList.add("img-style");
+        }
+      }
+      setInterval(toggle, 3000);
+      gsap.fromTo(
+        ".logo",
+        { x: -100, opacity: 0 },
+        { duration: 1, delay: 0.5, x: 0, opacity: 1 }
+      );
+      gsap.fromTo(
+        ".main-textbox",
+        { yPercent: 10, opacity: 0 },
+        { duration: 1, delay: 1.3, yPercent: -25, opacity: 1 }
+      );
+    </script>
+  </body>
+</html>

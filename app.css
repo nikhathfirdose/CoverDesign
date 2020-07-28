@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  font-size: 10px;
+  font-family: "Recursive", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.main-nav {
+  width: 100%;
+  height: 10rem;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo a {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 860;
+  color: rgb(212, 8, 49);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0.15rem solid rgb(177, 7, 41);
+  border-radius: 0.3rem;
+  letter-spacing: 0.11rem;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0.5rem 0.5rem 1rem #cacaca;
+  cursor: default;
+}
+
+.menu {
+  height: 5rem;
+  width: 5rem;
+  background-color: #eee;
+  border-radius: 0.4rem;
+  box-shadow: 0.3rem 0.4rem 1rem #cacaca;
+  /* -0.3rem -0.3rem 1rem #fff; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.menu:hover {
+  box-shadow: inset 0.5rem 0.5rem 1rem #cacaca, inset -0.5rem -0.5rem 1rem #fff;
+}
+
+.bar {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #333;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.5s;
+}
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #333;
+  transition: all 0.5s;
+}
+
+.bar::before {
+  top: -0.8rem;
+}
+.bar::after {
+  top: 0.8rem;
+}
+
+.open .bar {
+  background-color: transparent;
+}
+.open .bar::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.open .bar::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.nav-list {
+  padding: 3rem;
+  width: 30rem;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: -0.5rem 0 1rem rgba(0, 0, 0, 0.2);
+  z-index: 1500;
+  transition: transform 0.75s;
+  transform: translateX(55rem);
+}
+.open .nav-list {
+  transform: translateX(0);
+}
+.nav-item {
+  list-style: none;
+  border-bottom: 2px solid crimson;
+}
+
+.nav-link {
+  text-decoration: none;
+  display: block;
+  color: #333;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-weight: 700;
+  transition: color 0.5s;
+}
+.nav-link:hover {
+  color: crimson;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  background: url("images/shopping-model.jpg") right no-repeat;
+  background-size: 60% 100%;
+  right: 0;
+  top: 0;
+  position: relative;
+  transition: all 1s;
+}
+.img-style {
+  background: url("images/model-male.webp") right no-repeat;
+  background-size: 60% 100%;
+  right: 0;
+  top: 0;
+  position: relative;
+  transition: all 1s;
+  /* border: 2px solid red; */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.main::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  right: 10;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.main-clipped {
+  width: 80%;
+  height: inherit;
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  clip-path: polygon(0 0, 64% 0, 50% 100%, 0% 100%);
+  /* transform-origin: right; */
+}
+.main-textbox {
+  width: 55%;
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(10%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+  color: #333;
+  padding: 0.5rem;
+  z-index: 20;
+}
+
+.main-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1rem;
+}
+.sub-heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: crimson;
+  padding: 1rem 4rem;
+  margin-top: 3rem;
+  border-radius: 0.4rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.cta-btn:hover {
+  transform: scale(1.2) scaleY(1.01);
+  /* opacity: 0.8; */
+  transition: all 0.5s;
+}
