@@ -64,14 +64,10 @@
       menu.addEventListener("click", () => {
         mainNav.classList.toggle("open");
       });
-      function toggle() {
-        if (image.classList.contains("img-style")) {
-          image.classList.remove("img-style");
-        } else {
-          image.classList.add("img-style");
-        }
+      function toggleImage() {
+        image.classList.toggle("img-style");
       }
-      setInterval(toggle, 3000);
+      setInterval(toggleImage, 3000);
       gsap.fromTo(
         ".logo",
         { x: -100, opacity: 0 },
